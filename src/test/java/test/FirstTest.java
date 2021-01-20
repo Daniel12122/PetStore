@@ -1,7 +1,8 @@
 package test;
 
 
-import org.testng.annotations.BeforeClass;
+import base.BaseTest;
+import io.restassured.response.ValidatableResponse;
 import org.testng.annotations.Test;
 import pojo.pet.Pet;
 import utils.api.controller.ControllerPet;
@@ -12,15 +13,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.samePropertyValuesAs;
 
 
-public class First {
+public class FirstTest extends BaseTest {
 
     ControllerPet petsController;
     Pet pet = BuilderPet.defaultPet();
-
-    @BeforeClass
-    public void beforeClass() {
-        petsController = new ControllerPet();
-    }
 
     @Test(priority = 0)
     public void addNewPet() {
@@ -30,8 +26,7 @@ public class First {
 
     @Test(priority = 1)
     public void verifyNewPet() {
-        String petResponse = petsController.getPet(pet);
-        System.out.println(petResponse);
+        petsController.getPet(pet);
     }
 
     @Test(priority = 2)
@@ -43,8 +38,8 @@ public class First {
 
     @Test(priority = 3)
     public void verifyUpdatedPet() {
-        String petResponse = petsController.getPet(pet);
-        System.out.println(petResponse);;
+        ValidatableResponse petResponse = petsController.getPet(pet);
+        System.out.println(petResponse);
     }
 
     @Test(priority = 4)

@@ -1,19 +1,16 @@
 package utils.api.controller;
 
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
-import io.restassured.specification.RequestSpecification;
 import pojo.pet.Pet;
 import pojo.pet.PetStatus;
 
 import java.util.List;
 
+import static base.BaseTest.requestSpecification;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.containsString;
 import static utils.api.Constants.PET_ENDPOINT;
-import static utils.framework.SuiteListener.requestSpecification;
 
 public class ControllerPet {
 
@@ -39,7 +36,10 @@ public class ControllerPet {
     public void deletePet(Pet pet) {
         given(requestSpecification)
                 .pathParam("Id", pet.getId())
-                .delete(PET_ENDPOINT + "/{Id}");
+                .delete(PET_ENDPOINT + "/{Id}")
+                .then()
+                .statusCode(200)
+                .contentType(ContentType.JSON);
     }
 
     public void verifyPetDeleted(Pet pet) {
@@ -47,13 +47,17 @@ public class ControllerPet {
                 .pathParam("petId", pet.getId())
                 .get(PET_ENDPOINT + "/{petId}")
                 .then()
-                .body(containsString("Pet not found"));
+                .body(containsString("Pet not found"))
+                .statusCode(404)
+                .contentType(ContentType.JSON);
     }
 
-    public String getPet(Pet pet) {
+    public ValidatableResponse getPet(Pet pet) {
         return given(requestSpecification)
                 .pathParam("petId", pet.getId())
-                .get(PET_ENDPOINT + "/{petId}").asString();
+                .get(PET_ENDPOINT + "/{petId}")
+                .then()
+                .contentType(ContentType.JSON);
     }
 
     public Pet updatePet(Pet pet) {

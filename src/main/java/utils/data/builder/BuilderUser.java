@@ -8,7 +8,7 @@ public  class BuilderUser {
     public static User defaultUser() {
         return User.builder()
                 .id(12345)
-                .username("Danya Pazykov")
+                .username("DanyaPazykov")
                 .firstName("Danya")
                 .lastName("Pazykov")
                 .email("pazykovd@gmail.com")
