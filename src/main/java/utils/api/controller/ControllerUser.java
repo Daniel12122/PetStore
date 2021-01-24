@@ -44,7 +44,7 @@ public class ControllerUser {
                 .get(USER_ENDPOINT + "/{username}").as(User.class);
     }
 
-    public User updatePet(User user) {
+    public User updateUser(User user) {
         return given(requestSpecification)
                 .body(user)
                 .put(USER_ENDPOINT + "/{username}").as(User.class);

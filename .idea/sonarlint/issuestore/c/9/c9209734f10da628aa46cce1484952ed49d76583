@@ -1,0 +1,27 @@
+
+T
+java:S1444"2Make this "public static PET_ENDPOINT" field final(ฦก่๛ÿÿÿÿ8“ส่“๑.
+Q
+java:S1444"4Make this "public static STORE_ENDPOINT" field final(ฑ ่8“ส่“๑.
+U
+java:S1444"3Make this "public static USER_ENDPOINT" field final(ÿ๘—ป๘ÿÿÿÿ8“ส่“๑.
+p
+java:S3008"SRename this field "BASE_URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ฮูะ8“ส่“๑.
+y
+java:S3008"WRename this field "PET_ENDPOINT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ฦก่๛ÿÿÿÿ8“ส่“๑.
+v
+java:S3008"YRename this field "STORE_ENDPOINT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ฑ ่8“ส่“๑.
+z
+java:S1104"XMake PET_ENDPOINT a static final constant or non-public and provide accessors if needed.(ฦก่๛ÿÿÿÿ8“ส่“๑.
+q
+java:S1104"TMake BASE_URL a static final constant or non-public and provide accessors if needed.(ฮูะ8“ส่“๑.
+z
+java:S3008"XRename this field "USER_ENDPOINT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ๘—ป๘ÿÿÿÿ8“ส่“๑.
+\
+java:S1118":Add a private constructor to hide the implicit public one.(“ณฑ๛ÿÿÿÿ8“ส่“๑.
+K
+java:S1444".Make this "public static BASE_URL" field final(ฮูะ8“ส่“๑.
+w
+java:S1104"ZMake STORE_ENDPOINT a static final constant or non-public and provide accessors if needed.(ฑ ่8“ส่“๑.
+{
+java:S1104"YMake USER_ENDPOINT a static final constant or non-public and provide accessors if needed.(ÿ๘—ป๘ÿÿÿÿ8“ส่“๑.
